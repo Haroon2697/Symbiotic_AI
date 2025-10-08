@@ -124,6 +124,34 @@ export function HowItWorks() {
           ))}
         </div>
 
+        {/* Compact FAQ */}
+        <div className="mt-16 max-w-4xl mx-auto px-4">
+          <div className="text-center mb-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-black font-sans">FAQs</h3>
+            <p className="text-gray-600 text-sm sm:text-base font-sans">Quick answers to common questions</p>
+          </div>
+          <div className="divide-y divide-gray-200 rounded-2xl border border-gray-200 bg-white">
+            {[{
+              q: "Do you replace our current tools?",
+              a: "No. We integrate and optimize your existing stack (POS, CRM, accounting, scheduling)."
+            },{
+              q: "How fast can we see value?",
+              a: "Teams usually see real-time KPI visibility in the first 2-4 weeks; automation follows."
+            },{
+              q: "Is it customizable for multiple locations?",
+              a: "Yes. Benchmarks and dashboards support cross-unit comparisons and tailored KPIs."
+            }].map((item, i) => (
+              <details key={item.q} className="group p-4 sm:p-5">
+                <summary className="cursor-pointer list-none font-semibold text-black flex items-center justify-between">
+                  <span>{item.q}</span>
+                  <span className="ml-4 text-[#fe9e01] group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <p className="mt-2 text-sm sm:text-base text-gray-600">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+
         {/* Progress Line */}
         <motion.div
           initial={{ scaleY: 0 }}

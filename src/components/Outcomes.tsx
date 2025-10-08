@@ -1,7 +1,25 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import { DollarSign, Calendar, Shield } from "lucide-react";
 
 export function Outcomes() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+
+  const [progress, setProgress] = useState(0);
+  useEffect(() => {
+    if (!inView) return;
+    let frame: number;
+    const start = performance.now();
+    const duration = 1200;
+    const tick = (t: number) => {
+      const p = Math.min(1, (t - start) / duration);
+      setProgress(p);
+      if (p < 1) frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [inView]);
   const stats = [
     { icon: DollarSign, value: "40%", label: "Efficiency Increase", suffix: "average" },
     { icon: Calendar, value: "25%", label: "Cost Reduction", suffix: "in labor costs" },
@@ -33,7 +51,7 @@ export function Outcomes() {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div ref={ref} className="grid md:grid-cols-3 gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -54,7 +72,11 @@ export function Outcomes() {
 
               {/* Metric */}
               <div className="mb-2 text-4xl md:text-5xl font-bold text-[#43217a]">
-                {stat.value}
+                {stat.value.endsWith("%")
+                  ? `${Math.round(parseInt(stat.value) * progress)}%`
+                  : stat.value.includes("+")
+                  ? `${Math.round(parseInt(stat.value) * progress)}+`
+                  : stat.value}
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-1 font-sans">{stat.label}</h3>
               <p className="text-muted-foreground text-sm font-sans">{stat.suffix}</p>

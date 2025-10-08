@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -12,10 +12,42 @@ export function Hero() {
     duration: 6 + Math.random() * 4,
   }));
 
+  // Parallax setup
+  const { scrollYProgress } = useScroll();
+  const yBack = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const yMid = useTransform(scrollYProgress, [0, 1], [0, -250]);
+  const yFront = useTransform(scrollYProgress, [0, 1], [0, -350]);
+
+  // Royalty-free imagery (Unsplash) relevant to target industries
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-cyber-grid opacity-20" />
+      {/* Parallax layers (no external images) */}
+      <motion.div
+        aria-hidden
+        className="absolute inset-0"
+        style={{ y: yBack }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-[#43217a]/25 via-transparent to-[#fe9e01]/20" />
+      </motion.div>
+      <motion.div
+        aria-hidden
+        className="absolute inset-0"
+        style={{ y: yMid }}
+      >
+        <div className="absolute -top-20 right-0 w-[60%] h-[60%] rounded-full bg-[#43217a]/15 blur-3xl" />
+      </motion.div>
+      <motion.div
+        aria-hidden
+        className="absolute inset-0"
+        style={{ y: yFront }}
+      >
+        <div className="absolute -bottom-10 left-0 w-[55%] h-[55%] rounded-full bg-[#fe9e01]/15 blur-3xl" />
+      </motion.div>
+      {/* Subtle overlay to ensure text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/50 to-white/70" />
       
       {/* Floating Particles */}
       {particles.map((particle) => (
@@ -92,7 +124,8 @@ export function Hero() {
           ))}
         </motion.div>
 
-        {/* Main Headline */}
+        {/* Main Headline */
+        }
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -156,6 +189,14 @@ export function Hero() {
             ease: "easeInOut",
           }}
         />
+        {/* Foreground parallax glow */}
+        <motion.div
+          aria-hidden
+          className="absolute inset-0"
+          style={{ y: yFront }}
+        >
+          <div className="absolute inset-x-0 bottom-10 h-40 bg-gradient-to-t from-[#43217a]/20 to-transparent blur-2xl" />
+        </motion.div>
       </div>
     </section>
   );

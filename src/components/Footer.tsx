@@ -137,6 +137,12 @@ export function Footer() {
           </p>
         </motion.div>
       </div>
+      {/* Floating CTA Button */}
+      <a href="mailto:info@symbioticaisolutions.com" className="fixed right-4 bottom-4 z-50">
+        <div className="rounded-full px-5 py-3 bg-[#fe9e01] text-white font-semibold shadow-[0_10px_30px_rgba(254,158,1,0.5)] hover:bg-[#43217a] transition-colors">
+          Schedule Consultation
+        </div>
+      </a>
     </footer>
   );
 }
