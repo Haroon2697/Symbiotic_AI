@@ -62,6 +62,8 @@ export function Features() {
           </p>
         </motion.div>
 
+        
+
         {/* Main Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16 px-4">
           {features.map((feature, index) => (
@@ -106,6 +108,8 @@ export function Features() {
             </motion.div>
           ))}
         </motion.div>
+
+        
       </div>
       
       {/* Bottom divider for better component separation */}

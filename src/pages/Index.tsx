@@ -9,6 +9,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { Footer } from "@/components/Footer";
 import { PatentSection } from "@/components/PatentSection";
 import { MagneticCursor } from "@/components/ui/magnetic-cursor";
+ 
 
 const Index = () => {
   return (

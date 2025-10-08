@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Utensils, Coffee, Wine, Store } from "lucide-react";
+import { Utensils, Coffee, Wine, Store, Layers, ChartLine, Sparkles, BellRing, Gauge } from "lucide-react";
 
 export function VenueFeatures() {
   const venueTypes = [
@@ -76,60 +76,114 @@ export function VenueFeatures() {
           </p>
         </motion.div>
 
-        {/* Venue Types Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 px-4">
-          {venueTypes.map((venue, index) => (
-            <motion.div
-              key={venue.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.8 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-200 hover:border-[#fe9e01] transition-all duration-500 h-full shadow-[0_0_20px_rgba(0,0,0,0.1)] hover:shadow-[0_0_30px_rgba(254,158,1,0.2)]"
-            >
-              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 bg-[#fe9e01] text-white shadow-[0_0_20px_rgba(254,158,1,0.4)] group-hover:bg-[#43217a]`}>
-                <venue.icon className="w-8 h-8 text-white" />
+        {/* Inserted detailed services and bullets per request */
+        /* Icons added for visual emphasis */}
+        <div className="space-y-10 px-4 max-w-5xl mx-auto mb-16">
+          {/* AI-Driven Operational Dashboards */}
+          <div className="group rounded-2xl p-[1px] bg-gradient-to-r from-[#fe9e01]/60 via-[#43217a]/40 to-[#fe9e01]/60 shadow-[0_0_18px_rgba(254,158,1,0.15)] hover:shadow-[0_0_28px_rgba(67,33,122,0.25)] transition-shadow duration-300">
+            <div className="bg-white rounded-2xl p-6">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-xl bg-[#fe9e01]/15 flex items-center justify-center">
+                <Layers className="w-5 h-5 text-[#fe9e01]" />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-black font-sans">AI-Driven Operational Dashboards</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-sans">All your systems. One intelligent view.</p>
+            <ul className="space-y-2 text-sm text-gray-700 font-sans">
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>Unified Data Layer: POS, labor, accounting, inventory, CRM</li>
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>Real-Time KPI Tracking: sales, labor %, food cost %, guest metrics</li>
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>Custom Alerts: triggers when targets are missed</li>
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>Cross-Unit Benchmarking across locations</li>
+            </ul>
+            </div>
+          </div>
+
+          {/* Sales Forecasting & Labor Management */}
+          <div className="group rounded-2xl p-[1px] bg-gradient-to-r from-[#fe9e01]/60 via-[#43217a]/40 to-[#fe9e01]/60 shadow-[0_0_18px_rgba(254,158,1,0.15)] hover:shadow-[0_0_28px_rgba(67,33,122,0.25)] transition-shadow duration-300">
+            <div className="bg-white rounded-2xl p-6">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-xl bg-[#fe9e01]/15 flex items-center justify-center">
+                <ChartLine className="w-5 h-5 text-[#fe9e01]" />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-black font-sans">Sales Forecasting & Labor Management</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-sans">Predict demand. Control costs. Protect guest experience.</p>
+            <ul className="space-y-2 text-sm text-gray-700 font-sans">
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>Predictive Sales Forecasts using history, weather, events, seasonality</li>
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>Dynamic Scheduling that flexes with demand</li>
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>Cost Optimization to meet labor targets</li>
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>Scenario Modeling for planning</li>
+            </ul>
+            </div>
+          </div>
+
+          {/* Marketing & Lead Generation Automation */}
+          <div className="group rounded-2xl p-[1px] bg-gradient-to-r from-[#fe9e01]/60 via-[#43217a]/40 to-[#fe9e01]/60 shadow-[0_0_18px_rgba(254,158,1,0.15)] hover:shadow-[0_0_28px_rgba(67,33,122,0.25)] transition-shadow duration-300">
+            <div className="bg-white rounded-2xl p-6">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-xl bg-[#fe9e01]/15 flex items-center justify-center">
+                <Sparkles className="w-5 h-5 text-[#fe9e01]" />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-black font-sans">Marketing & Lead Generation Automation</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-sans">Smarter campaigns, less manual work.</p>
+            <ul className="space-y-2 text-sm text-gray-700 font-sans">
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>AI-driven CRM & Outreach</li>
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>Lead Scoring for high-value segments</li>
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>Guest Sentiment Monitoring in real time</li>
+            </ul>
+            </div>
               </div>
               
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-black group-hover:text-[#fe9e01] transition-all duration-300 font-sans">
-                {venue.title}
-              </h3>
-              
-              <ul className="space-y-3">
-                {venue.features.map((feature, featureIndex) => (
-                  <motion.li
-                    key={feature}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.2 + featureIndex * 0.1 + 0.5 }}
-                    className="flex items-start text-xs sm:text-sm text-gray-600 font-sans"
-                  >
-                    <div className="w-2 h-2 rounded-full bg-[#fe9e01] mr-3 mt-2 flex-shrink-0" />
-                    <span>{feature}</span>
-                  </motion.li>
-                ))}
+          {/* Guest Experience Optimization */}
+          <div className="group rounded-2xl p-[1px] bg-gradient-to-r from-[#fe9e01]/60 via-[#43217a]/40 to-[#fe9e01]/60 shadow-[0_0_18px_rgba(254,158,1,0.15)] hover:shadow-[0_0_28px_rgba(67,33,122,0.25)] transition-shadow duration-300">
+            <div className="bg-white rounded-2xl p-6">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-xl bg-[#fe9e01]/15 flex items-center justify-center">
+                <BellRing className="w-5 h-5 text-[#fe9e01]" />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-black font-sans">Guest Experience Optimization</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-sans">Turn sentiment into training and loyalty.</p>
+            <ul className="space-y-2 text-sm text-gray-700 font-sans">
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>AI-Powered Feedback Loops</li>
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>Loyalty Prediction to prevent churn</li>
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>Personalization Engines with smart offers</li>
+            </ul>
+            </div>
+          </div>
+
+          {/* Custom AI Integrations */}
+          <div className="group rounded-2xl p-[1px] bg-gradient-to-r from-[#fe9e01]/60 via-[#43217a]/40 to-[#fe9e01]/60 shadow-[0_0_18px_rgba(254,158,1,0.15)] hover:shadow-[0_0_28px_rgba(67,33,122,0.25)] transition-shadow duration-300">
+            <div className="bg-white rounded-2xl p-6">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-xl bg-[#fe9e01]/15 flex items-center justify-center">
+                <Gauge className="w-5 h-5 text-[#fe9e01]" />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-black font-sans">Custom AI Integrations</h3>
+            </div>
+            <p className="text-gray-700 mb-4 font-sans">Automation where it matters most.</p>
+            <ul className="space-y-2 text-sm text-gray-700 font-sans">
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>Financial Automations: invoice matching, cash flow alerts</li>
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>Vendor Optimization: predict shortages/pricing spikes</li>
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>Training & Onboarding AI: adaptive modules</li>
+              <li className="flex"><span className="w-2 h-2 rounded-full bg-[#fe9e01] mt-2 mr-3"></span>Executive Dashboards: integrated leadership view</li>
               </ul>
-            </motion.div>
-          ))}
+            </div>
+          </div>
+
+          {/* Competitor Lens Summary */}
+          <div className="rounded-2xl p-[1px] bg-gradient-to-r from-[#fe9e01]/60 via-[#43217a]/40 to-[#fe9e01]/60 shadow-[0_0_18px_rgba(254,158,1,0.15)]">
+            <div className="bg-white rounded-2xl p-6">
+            <p className="text-sm sm:text-base text-gray-700 font-sans">
+              <span className="font-semibold text-black">Competitor Lens: </span>
+              Direct SaaS (Toast, R365, MarginEdge) are feature-rich but siloed. Big AI firms (Deloitte, Accenture) are broad and costly. <span className="font-semibold">Symbiotic AI</span> sits between—nimble, industry-specific, and transformation-focused.
+            </p>
+            </div>
+          </div>
         </div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-          className="text-center mt-12 sm:mt-16 px-4"
-        >
-          <p className="text-base sm:text-lg text-gray-600 mb-6 font-sans max-w-2xl mx-auto">
-            Ready to see how Symbiotic AI can transform your specific business operations?
-          </p>
-          <motion.button 
-            whileHover={{ scale: 1.05 }} 
-            className="btn-neon px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-[#fe9e01] text-white shadow-[0_0_20px_rgba(254,158,1,0.3)] hover:bg-[#43217a] hover:shadow-[0_0_40px_rgba(254,158,1,0.8)] font-sans w-full sm:w-auto max-w-sm sm:max-w-none mx-auto sm:mx-0"
-          >
-            Schedule AI Consultation
-          </motion.button>
-        </motion.div>
+        {/* Removed original venue-type grid and CTA per request */}
       </div>
     </section>
   );

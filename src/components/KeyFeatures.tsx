@@ -11,11 +11,10 @@ type ValueStripProps = {
 }
 
 const DEFAULT_ITEMS = [
-  "AI-Driven Insights",
-  "Data Integration",
-  "Real-Time Analytics",
-  "Custom Automation",
-  "ROI Optimization",
+  "Your AI Partner in Business Transformation.",
+  "Making Your Data Work for You.",
+  "The Missing Link Between Your Tools and Growth.",
+  "From Data Chaos to Clarity.",
 ]
 
 export function KeyFeatures({
