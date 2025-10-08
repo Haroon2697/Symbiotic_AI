@@ -53,12 +53,12 @@ export function Navbar() {
               aria-label="Home"
             >
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#43217a] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg sm:text-xl">SAI</span>
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-lg flex items-center justify-center ${scrolled ? "bg-[#43217a]" : "bg-white"}`}>
+                  <span className={`font-bold text-lg sm:text-xl ${scrolled ? "text-white" : "text-black"}`}>SAI</span>
                 </div>
                 <div className="hidden sm:block">
-                  <div className="text-lg sm:text-xl font-bold text-white font-sans">Symbiotic AI</div>
-                  <div className="text-xs text-white/80 font-sans">Solutions</div>
+                  <div className={`text-lg sm:text-xl font-bold font-sans ${scrolled ? "text-white" : "text-black"}`}>Symbiotic AI</div>
+                  <div className={`text-xs font-sans ${scrolled ? "text-white/80" : "text-black/80"}`}>Solutions</div>
                 </div>
               </div>
             </motion.a>
